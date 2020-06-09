@@ -54,7 +54,7 @@
 
 
 (* ::Input:: *)
-(*NetInformation[lenet,"ArraysTotalElementCount"]*)
+(*Information[lenet,"ArraysTotalElementCount"]*)
 
 
 (* ::Text:: *)
