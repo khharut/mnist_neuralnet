@@ -19,8 +19,8 @@ model %>%
 model %>% compile(loss = 'categorical_crossentropy',
   optimizer = optimizer_adam(),
   metrics = c('accuracy'))
-history <- model %>% fit(x_train, y_train, 
+history <- model %>% fit(x_train, y_train, use_mutiprocessing = TRUE, 
   epochs = 3, validation_data = list(x_test, y_test))
 plot(history)
 model %>% evaluate(x_test, y_test)
-model %>% predict_classes(x_test)
+model %>% predict(x_test)
