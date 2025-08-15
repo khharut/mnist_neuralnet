@@ -1,5 +1,6 @@
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
+from tensorflow.keras import Input
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.layers import Dense, Conv2D, Flatten
 
@@ -10,8 +11,8 @@ y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
 model = Sequential()
-model.add(Conv2D(64, kernel_size=3, activation='relu',
-                 input_shape=(28, 28, 1)))
+model.add(Input(shape=(28, 28, 1)))
+model.add(Conv2D(64, kernel_size=3, activation='relu'))
 model.add(Conv2D(32, kernel_size=3, activation='relu'))
 model.add(Flatten())
 model.add(Dense(10, activation='softmax'))
